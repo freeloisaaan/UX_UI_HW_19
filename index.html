@@ -37,7 +37,7 @@
             <div class="cards">
                 <div class="work-item">
                     <div class="image-placeholder">
-                        <img src="images/roadsavvy.png" alt="roadsavvy" width="350px" height="300">
+                        <img src="images/roadsavvy.png" alt="roadsavvy" width="350px" height="300" id="hoverImage">
                     </div>
                     <div class="work1">
                         <h3>roadsavvy</h3>
@@ -56,8 +56,19 @@
                     </div>
                 </div>
             </div>
-
-            <script src="images/roadsavvy.png"></script>
+            <script>
+                const images = document.querySelectorAll('.work-item img');
+            
+                images.forEach(image => {
+                    image.addEventListener('mouseover', function() {
+                        this.style.transform = 'scale(1.1)';
+                    });
+            
+                    image.addEventListener('mouseout', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+            </script>
         </section>
         <!-- <section class="other">
             <h3>Other than design</h3>
